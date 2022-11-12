@@ -1,0 +1,27 @@
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+  }
+  #reservations {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #reservations td, #reservations th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #reservations tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #reservations tr:hover {background-color: #ddd;}
+  
+  #reservations th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }

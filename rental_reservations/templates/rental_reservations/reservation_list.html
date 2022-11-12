@@ -1,0 +1,42 @@
+{% extends "rental_reservations/base_generic.html" %}
+
+{% block content %}
+  <h1>Reservation List</h1>
+  {% if reservation_list %}
+  <table class="table"><thead class="thead-dark">
+    <th>Rental Name</th>
+    <th>ReservationID</th>
+    <th>CheckIn</th>
+    <th>CheckOut</th>
+    <th>Previous Reservation ID</th>
+   </thead>
+   <tbody>
+    
+    {% for reservation in reservation_list %}
+      
+    <tr id="{{rental.id}}">
+      <td>{{reservation.rental_id}}</td>
+      <td><a href="{{ reservation.get_absolute_url }}">{{reservation.id}}</a></td>
+       <td>{{reservation.check_in}}</td>
+       <td>{{reservation.check_out}}</td>
+       {%for rental in rentals%}
+       {% if rental.rental_id == reservation.rental_id and reservation.id != rental.id and reservation.check_in >= rental.check_in and reservation.check_out >= rental.check_out%}
+
+       <td id="{{rental.id}}" class="rentals">{{rental.id}}</td>
+   
+       {% endif %}
+       {% endfor %}
+      
+     </tr>
+    
+    {% endfor %}
+  </tbody></table>
+  {% else %}
+    <p>There are no Reservations in the rental property.</p>
+  {% endif %}
+ 
+
+  
+
+
+{% endblock %}

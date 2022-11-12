@@ -1,0 +1,27 @@
+{% extends "rental_reservations/base_generic.html" %}
+
+{% block content %}
+  <h1>Rental List</h1>
+  {% if rental_list %}
+  <table class="table"><thead>
+    <th>Rental Name</th>
+    <th>ReservationID</th>
+    
+   </thead>
+   <tbody>
+    {% for rental in rental_list %}
+       
+       
+            <tr>
+             <a href="{{ rental.get_absolute_url }}"><td>{{rental.name}}</td></a>
+              <td>{{rental.id}}</td>
+             
+            
+            </tr>
+    {% endfor %}
+    
+</tbody></table>
+  {% else %}
+    <p>There are no Rentals properties.</p>
+  {% endif %}
+{% endblock %}

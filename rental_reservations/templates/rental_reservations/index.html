@@ -1,0 +1,12 @@
+{% extends "rental_reservations/base_generic.html" %}
+
+{% block content %}
+  <h1> Home</h1>
+  <p>Welcome to Rental Reservations, a website developed by <em>Tazeen</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>The website has the following record counts:</p>
+  <ul>
+    <li><strong>Rentals:</strong> {{ num_rentals }}</li>
+    <li><strong>Reservations:</strong> {{ num_reservations }}</li>
+  </ul>
+{% endblock %}

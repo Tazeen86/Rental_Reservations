@@ -1,0 +1,12 @@
+{% extends "rental_reservations/base_generic.html" %}
+
+{% block content %}
+  <h1>Reservation Detail</h1>     
+  <h2>ID: {{ reservation.id }}</h2>
+
+  <p><strong>CheckIn:</strong> {{ reservation.check_in }}</p> <!-- author detail link not yet defined -->
+  <p><strong>CheckOut:</strong> {{ reservation.check_out }}</p>
+  <p><strong></strong> {{ reservation.rental_id }}</p>
+
+
+{% endblock %}
